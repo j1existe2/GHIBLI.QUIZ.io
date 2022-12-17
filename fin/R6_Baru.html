@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width;initial-scale=1.0;minimum-scale=0.5;maximum-scale=2.0;user-scalable=yes"/>
+    <meta charset="UTF-8">
+    <title>Ghibli_Result7</title>
+    <link rel="stylesheet" type="text/css" href="css/csstyle.css">
+</head>
+
+<style>
+  
+.title {
+    position: fixed;
+    top: 8%;
+    left: 2%;
+    margin-left: 10px;
+    z-index: 3;
+    }
+#button1 {
+    position: fixed;
+    top: 20%;
+    left: 22%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 15vw;
+    z-index: 0;
+    }
+    
+#button2 {
+    position: fixed;
+    top: 20%;
+    left: 75%;
+    margin-top:10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 15vw;
+    z-index: 0;
+    }
+    
+body { 
+   opacity: 100;
+   transition: opacity .5s;
+}
+.result{
+    visibility: hidden;
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 99;
+    }
+    
+    #c0{
+    position: fixed;
+    width: 50px;
+    height: 70px;
+    z-index: 99;    
+    }
+    
+    img{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    z-index: 99;    
+    }
+    
+    #pic{
+    position: fixed;
+    top: 48%;
+    left: 5%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 99;
+    width: 30vw;
+    height:50vh;
+    }
+    
+    #photo{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 190vw;
+    height:190vh;
+    z-index: -999;
+    }
+
+</style>
+<script>
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() { 
+        window.location.href = href
+    }, 500)
+}
+
+
+    function show(){
+        document.getElementById("button1").style.visibility="hidden";
+        document.getElementById("titre").style.visibility="visible";
+        document.getElementById("words").style.visibility="visible";
+        document.getElementById("pic").style.visibility="visible";
+    }
+    
+    let n=-1;
+    let N=15;
+    let name=new Array(N);
+    for(let i=0; i < N; i++){
+        name[i]="c"+i.toString();
+    }
+    
+    function jump(){
+        back();
+        let idx=Math.floor(Math.random()*6);
+        document.getElementById(name[idx]).style.top="2%";
+    }
+    
+    function next(){
+        back();
+        n=(n+1)%12;
+        let idx=n;
+        document.getElementById(name[idx]).style.top="7%";
+    }
+    
+    function back(){
+        document.getElementById("c0").style.left="450px";
+        document.getElementById("c0").style.top="-300px";
+        
+        document.getElementById("c1").style.left="520px";
+        document.getElementById("c1").style.top="-300px";
+        
+        document.getElementById("c2").style.left="590px";
+        document.getElementById("c2").style.top="-300px";
+        
+        document.getElementById("c3").style.left="660px";
+        document.getElementById("c3").style.top="-300px";
+
+        document.getElementById("c4").style.left="730px";
+        document.getElementById("c4").style.top="-300px";
+
+        document.getElementById("c5").style.left="800px";
+        document.getElementById("c5").style.top="-300px";
+        
+        document.getElementById("c6").style.left="870px";
+        document.getElementById("c6").style.top="-300px";
+        
+        document.getElementById("c7").style.left="940px";
+        document.getElementById("c7").style.top="-300px";
+        
+        document.getElementById("c8").style.left="1010px";
+        document.getElementById("c8").style.top="-300px";
+        
+        document.getElementById("c9").style.left="1080px";
+        document.getElementById("c9").style.top="-300px";
+        
+        document.getElementById("c10").style.left="1150px";
+        document.getElementById("c10").style.top="-300px";
+        
+        document.getElementById("c11").style.left="1220px";
+        document.getElementById("c11").style.top="-300px";
+    }
+    
+    function wave(){
+        setInterval(next,500);
+    }
+
+    function play_music(){
+        document.getElementById("bgm").play();
+    }
+    
+    function play_sound(){
+    document.getElementById("sound").play();
+}
+
+window.onload=wave();
+</script>
+<body>
+    <div class="title">
+        <font style="color:#E6E6FA;font-size: 32pt" align= "center">你是吉卜力動畫裡的...</font><br>
+    <div>
+    <button id="button1" onclick="play_music();show()" style= "color: #0099CC; 
+      background: #eeeeee; border: 2px solid white; border-radius: 6px; color: #537697; padding: 16px 60px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">查看結果</button><br>
+      <div><button id="button2" onclick="transitionToPage('main_page.html');play_sound()" style= "color: #0099CC; 
+      background: #537697; border: 2px solid white; border-radius: 6px; color: white; padding: 16px 32px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">再測一次</button>
+    
+    <div class="audio">
+    <audio id="sound">
+        <source src="sound/crrect_answer1.mp3" type="audio/mpeg">
+    </audio>
+       <audio id="bgm" loop><source src="sound/M_Castle%20in%20the%20Sky.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    <div class="motion">
+       <p>
+        <img id="c0" src="images/G0_robot.png" width="50px" style="left:450px;top: -300px">
+        <img id="c1" src="images/G3_black.png" width="50px" style="left: 520px;top: -300px">
+        <img id="c2" src="images/G4_Calcifer.png" width="50px" style="left: 590px;top: -300px">
+        <img id="c3" src="images/G5_cat%20baron.png" width="50px" style="left:660px;top: -300px">
+        <img id="c4" src="images/G6_Chichi.png" width="50px" style="left: 730px;top: -300px">
+        <img id="c5" src="images/G7_Chihiro.png" width="50px" style="left: 800px;top: -300px">
+        <img id="c6" src="images/G8_Hatter.png" width="50px" style="left: 870px;top:-300px">
+        <img id="c7" src="images/G9_Her.png" width="50px" style="left: 940px;top:-300px">
+        <img id="c8" src="images/G10_Hita.png" width="50px" style="left: 1010px;top:-300px">
+        <img id="c9" src="images/G11_Ponyo.png" width="50px" style="left: 1080px;top: -300px">
+        <img id="c10" src="images/G13_Toto.png" width="50px" style="left: 1150px;top:-300px">
+        <img id="c11" src="images/G14_Whitedragon.png" width="50px" style="left: 1220px;top: -300px">
+       </p>
+    </div>
+    <div class="result">
+        <p id="titre" style="color:#D3D3D3;font-size: 20pt">《天空之城》巴魯</p>
+        <p id="words" style="color:#D3D3D3;font-size: 15pt">
+            你如同巴魯一樣，性情直率勇敢，脾氣溫和，對實現理想有著堅定的決心，<br>
+            遇見了自己在意的人事物，也能夠付出完全的自我去大膽追尋。<br>
+            與人相處時，剛開始有些木訥，<br>
+            彼此逐漸熟悉後，會將對方放在心上，予以相信，<br>
+            是個相當重視情誼的性情中人。
+        </p>
+        <div class="pic">
+            <img id="pic" src="images/C6_Baru.png" width= "300px">
+        </div>
+        </div>
+    </div>
+    </div>
+        <div class="bg">
+        <img id="photo" max-width="100%" src="images/bg6.jpg">
+    </div>
